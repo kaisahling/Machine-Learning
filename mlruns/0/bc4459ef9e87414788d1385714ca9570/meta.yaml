@@ -1,0 +1,14 @@
+artifact_uri: /home/kai/Documents/Projects/Machine-Learning/mlruns/0/bc4459ef9e87414788d1385714ca9570/artifacts
+end_time: 1541169103056
+entry_point_name: ''
+experiment_id: 0
+lifecycle_stage: active
+name: ''
+run_uuid: bc4459ef9e87414788d1385714ca9570
+source_name: /home/kai/anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py
+source_type: 4
+source_version: ''
+start_time: 1541169103043
+status: 4
+tags: []
+user_id: kai
