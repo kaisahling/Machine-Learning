@@ -1,0 +1,1 @@
+TPOT is a tool to automate the most tedious tasks of the machine learning lifecycle. It automates the search for the best model to use. Once TPOT is done, it presents the best model. I created a small example to try it out. Since it is small, the waiting is rather short, so you can quickly try it out. Find out more about TPOT here https://epistasislab.github.io/tpot/
