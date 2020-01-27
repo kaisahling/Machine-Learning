@@ -4,6 +4,7 @@ from sklearn.dummy import DummyClassifier
 import os
 
 
+
 PATH = os.path.dirname(os.path.abspath(__file__))
 
 CONSTANT = 0.42
@@ -19,6 +20,19 @@ def train_model(x, y):
     model.fit(x, y)
     return model
 
+def upload_model(bucket_name,uri,model_name):
+    from google.cloud import storage
+    storage_client = storage.Client()
+
+    try:
+        bucket = storage_client.get_bucket(bucket_name)
+    except RuntimeError:
+        storage_client.create_bucket(bucket_name)
+        bucket = storage_client.get_bucket(bucket_name)
+
+    blob = bucket.blob(uri)
+    blob.upload_from_filename(model_name)
+
 
 if __name__ == "__main__":
     num_of_features = 10
@@ -26,6 +40,6 @@ if __name__ == "__main__":
     y_train = np.full((1, ), CONSTANT)
     model = train_model(x_train, y_train)
     assert model.predict(np.random.rand(1, num_of_features))[0] == CONSTANT
-    joblib.dump(model, os.path.join(PATH, "constant.joblib"))
-    os.environ["MY_MODEL_FILE"] = os.path.join(PATH, "constant.joblib")
-    print(os.environ["MY_MODEL_FILE"])
+    model_name = "constant.joblib"
+    joblib.dump(model, os.path.join(PATH, model_name))
+    upload_model("model_store_cloud_api_demo","serverless/constant/v1",model_name)
