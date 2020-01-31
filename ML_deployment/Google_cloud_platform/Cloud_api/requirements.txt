@@ -10,9 +10,8 @@ post==2019.4.13
 public==2019.4.13
 query-string==2019.4.13
 request==2019.4.13
-scikit-learn==0.22.1
 scipy==1.4.1
-sklearn==0.22.1
+scikit-learn==0.22.1
 Werkzeug==0.16.0
 google-api-core==1.14.2
 google-auth==1.6.3
