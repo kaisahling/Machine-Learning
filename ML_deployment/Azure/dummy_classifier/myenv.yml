@@ -1,0 +1,8 @@
+name: inference_environment
+dependencies:
+- python=3.6.2
+- numpy
+- scikit-learn
+- pip:
+    - azureml-defaults
+    - flask

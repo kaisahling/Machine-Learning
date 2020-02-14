@@ -1,0 +1,1 @@
+az ml model register -p ./models -n dummyclassifier -w Demo -g Demo

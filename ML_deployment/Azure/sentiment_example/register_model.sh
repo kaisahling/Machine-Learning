@@ -1,0 +1,1 @@
+az ml model register -p ./models -n sentiment -w Demo -g Demo
